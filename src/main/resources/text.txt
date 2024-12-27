@@ -1,0 +1,7 @@
+        Screen primärerBildschirm = Screen.getPrimary();
+
+        // Erhalte die Bildschirmgröße
+        Rectangle2D bildschirmGröße = primärerBildschirm.getVisualBounds();
+
+        double breite = bildschirmGröße.getWidth();
+        double höhe = bildschirmGröße.getHeight();
