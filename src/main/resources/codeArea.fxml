@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import org.fxmisc.richtext.*?>
+
+<StackPane fx:id="sp" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="800.0" prefWidth="600.0" stylesheets="style.css" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.demo.CodeAreaController">
+    <VBox maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="0.0" minWidth="0.0" prefHeight="600.0" prefWidth="800.0">
+        <ScrollPane fx:id="scroll" hbarPolicy="ALWAYS" pannable="true" vbarPolicy="ALWAYS" VBox.vgrow="ALWAYS">
+            <CodeArea fx:id="codeArea" lineHighlighterOn="true" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="800.0" prefWidth="1300.0">
+                <padding>
+                    <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                </padding>
+            </CodeArea>
+        </ScrollPane>
+        <HBox prefHeight="20.0" prefWidth="200.0" VBox.vgrow="NEVER">
+            <TextField fx:id="search" prefWidth="100.0" promptText="Search">
+                <HBox.margin>
+                    <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                </HBox.margin>
+            </TextField>
+            <JFXButton mnemonicParsing="false" prefHeight="30.0" prefWidth="80.0" style="-fx-background-color: #CCCCFF;" text="search">
+                <VBox.margin>
+                    <Insets bottom="50.0" left="10.0" right="10.0" top="50.0" />
+                </VBox.margin>
+                <HBox.margin>
+                    <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                </HBox.margin>
+            </JFXButton>
+            <JFXButton mnemonicParsing="false" onAction="#onSaveFile" prefHeight="30.0" prefWidth="80.0" style="-fx-background-color: #CCCCFF;" text="save">
+                <VBox.margin>
+                    <Insets bottom="50.0" left="10.0" right="10.0" top="50.0" />
+                </VBox.margin>
+                <HBox.margin>
+                    <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                </HBox.margin>
+            </JFXButton>
+            <JFXButton mnemonicParsing="false" onAction="#onSaveASFile" prefHeight="30.0" prefWidth="80.0" style="-fx-background-color: #CCCCFF;" text="saveAs">
+                <VBox.margin>
+                    <Insets bottom="50.0" left="10.0" right="10.0" top="50.0" />
+                </VBox.margin>
+                <HBox.margin>
+                    <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                </HBox.margin>
+            </JFXButton>
+            <VBox.margin>
+                <Insets />
+            </VBox.margin>
+        </HBox>
+    </VBox>
+    <DialogPane fx:id="dp" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="300.0" prefWidth="200.0" visible="false" StackPane.alignment="TOP_RIGHT">
+        <StackPane.margin>
+            <Insets right="20.0" top="30.0" />
+        </StackPane.margin>
+        <ButtonType fx:constant="CLOSE" />
+      <graphic>
+            <ScrollPane hbarPolicy="ALWAYS" vbarPolicy="ALWAYS">
+                <TreeView fx:id="treeView" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="250.0" prefWidth="200.0" />
+            </ScrollPane>
+      </graphic>
+    </DialogPane>
+    <StackPane.margin>
+        <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+    </StackPane.margin>
+</StackPane>

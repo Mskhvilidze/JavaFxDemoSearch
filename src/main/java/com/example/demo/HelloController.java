@@ -1,10 +1,17 @@
 package com.example.demo;
 
+import com.example.demo.manager.ScannerManager;
+import com.example.demo.message.CreateStage;
+import com.example.demo.message.CreateTree;
 import com.example.demo.model.FileInfo;
+import com.google.common.eventbus.EventBus;
+import javafx.application.Platform;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.Scene;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
@@ -12,6 +19,7 @@ import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
+import javafx.stage.Stage;
 
 import java.io.File;
 import java.io.IOException;
@@ -36,12 +44,14 @@ public class HelloController implements Initializable {
     private TableColumn<FileInfo, String> fileDate;
     @javafx.fxml.FXML
     private ImageView headerImage;
+    private EventBus bus = new EventBus();
 
     public HelloController() {
     }
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
+        this.bus.register(new ScannerManager());
         Image image = new Image(String.valueOf(getClass().getResource("/image/OIP.jpg")), 910, 367, true, false);
         this.headerImage.setImage(image);
         iniTable();
@@ -118,5 +128,15 @@ public class HelloController implements Initializable {
             );
             tableView.setItems(ff);
         }
+    }
+
+    @FXML
+    public void onCreateStage() {
+        this.bus.post(new CreateStage());
+    }
+
+    @FXML
+    private void onCreateTree() {
+        this.bus.post(new CreateTree());
     }
 }

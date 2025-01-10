@@ -1,0 +1,93 @@
+.tag {
+    -fx-fill: blue;
+    -fx-font-weight: bold;
+    -fx-font-size: 16px; /* Größe der Tags */
+}
+
+.attribute {
+    -fx-fill: red;
+    -fx-font-size: 14px; /* Größe der Attribute */
+}
+
+.content {
+    -fx-fill: black;
+    -fx-font-weight: bold;
+    -fx-font-size: 15px; /* Größe des Inhalts */
+}
+
+/* DialogPane - Fricke-Farben und abgerundete Ecken */
+.dialog-pane {
+    -fx-background-color: rgba(215, 25, 32, 0.2); /* Halbtransparenter Fricke-Rot-Ton */
+    -fx-border-color: #d71920; /* Fricke-Rot als Randfarbe */
+    -fx-border-width: 2px;
+    -fx-border-radius: 8px;
+    -fx-background-radius: 8px;
+    -fx-padding: 12px;
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.4), 10, 0.3, 0, 2);
+}
+
+/* ScrollPane - transparente Darstellung */
+.scroll-pane {
+    -fx-background-color: transparent;
+    -fx-control-inner-background: transparent;
+    -fx-border-color: transparent;
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.4), 10, 0.3, 0, 2);
+}
+
+/* TreeView - Fricke-Farben für Text und Hintergrund */
+.tree-view {
+    -fx-background-color: transparent;
+    -fx-font-size: 14px;
+    -fx-font-family: "Segoe UI", sans-serif;
+    -fx-text-fill: #d71920; /* Fricke-Rot für Text */
+}
+
+/* TreeCell - dezenter Hintergrund mit Fricke-Rot und Hover-Effekt */
+.tree-cell {
+    -fx-background-color: transparent;
+    -fx-text-fill: #d71920; /* Fricke-Rot */
+    -fx-padding: 6px;
+    -fx-border-color: transparent;
+}
+
+.tree-cell:hover {
+    -fx-background-color: rgba(215, 25, 32, 0.1); /* Leichte Hervorhebung bei Hover */
+    -fx-text-fill: #ffffff; /* Weißer Text bei Hover */
+}
+
+/* ScrollBar - moderne Darstellung in Fricke-Farben */
+.scroll-bar .thumb {
+    -fx-background-color: rgba(215, 25, 32, 0.8); /* Fricke-Rot für Scrollbar */
+    -fx-background-radius: 6px;
+}
+
+.scroll-bar .track {
+    -fx-background-color: transparent;
+}
+
+.scroll-bar .thumb:hover {
+    -fx-background-color: rgba(215, 25, 32, 1); /* Intensiveres Fricke-Rot bei Hover */
+}
+
+/* Styling nur für den Close-Button */
+.close-button {
+    -fx-background-color: #0070c0; /* Fricke-Blau */
+    -fx-text-fill: white;
+    -fx-font-size: 14px;
+    -fx-font-weight: bold;
+    -fx-padding: 8px 16px;
+    -fx-border-color: #004080; /* Dunkleres Blau für den Button-Rand */
+    -fx-border-width: 2px;
+    -fx-border-radius: 10px;
+    -fx-background-radius: 10px;
+}
+
+.close-button:hover {
+    -fx-background-color: #005bb5; /* Hellere Blau-Ton beim Hover */
+}
+
+.close-button:pressed {
+    -fx-background-color: #003f7f; /* Dunklerer Blau-Ton beim Klicken */
+}
+
+
